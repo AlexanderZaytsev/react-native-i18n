@@ -7,8 +7,10 @@
 //
 
 #import "RNI18n.h"
-#import "RCTBridge.h"
 
+@interface RNI18n ()
+-(NSString*) getCurrentLocale;
+@end
 
 @implementation RNI18n
 RCT_EXPORT_MODULE();

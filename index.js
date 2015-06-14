@@ -1,7 +1,8 @@
-var React = require('react-native');
-var I18n = require('i18n');
-var { NativeI18n } = require('react-native').NativeModules;
+'use strict';
 
-I18n.locale = NativeI18n.locale;
+var I18n = require('./vendor/i18n');
+var { RNI18n } = require('react-native').NativeModules;
+
+I18n.locale = RNI18n.locale;
 
 module.exports = I18n;
