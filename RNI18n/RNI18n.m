@@ -7,6 +7,8 @@
 //
 
 #import "RNI18n.h"
+#import "RCTBridge.h"
+
 
 @implementation RNI18n
 RCT_EXPORT_MODULE();
