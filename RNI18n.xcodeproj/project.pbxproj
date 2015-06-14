@@ -40,7 +40,6 @@
 		CDD7BF7B1B2D5125006FDA75 /* RNI18n.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNI18n.h; sourceTree = "<group>"; };
 		CDD7BF7D1B2D5125006FDA75 /* RNI18n.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNI18n.m; sourceTree = "<group>"; };
 		CDD7BF831B2D5126006FDA75 /* RNI18nTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNI18nTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDD7BF891B2D5126006FDA75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				CDD7BF7A1B2D5125006FDA75 /* RNI18n */,
-				CDD7BF871B2D5126006FDA75 /* RNI18nTests */,
 				CDD7BF791B2D5125006FDA75 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,22 +85,6 @@
 				CDD7BF7D1B2D5125006FDA75 /* RNI18n.m */,
 			);
 			path = RNI18n;
-			sourceTree = "<group>";
-		};
-		CDD7BF871B2D5126006FDA75 /* RNI18nTests */ = {
-			isa = PBXGroup;
-			children = (
-				CDD7BF881B2D5126006FDA75 /* Supporting Files */,
-			);
-			path = RNI18nTests;
-			sourceTree = "<group>";
-		};
-		CDD7BF881B2D5126006FDA75 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CDD7BF891B2D5126006FDA75 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +281,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../reach-native/React/**",
 					"$(SRCROOT)/node_modules/react-native/React/**",
+					"$(SRCROOT)/../react-native/React/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -314,8 +296,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../reach-native/React/**",
 					"$(SRCROOT)/node_modules/react-native/React/**",
+					"$(SRCROOT)/../react-native/React/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
