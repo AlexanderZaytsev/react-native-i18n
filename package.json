@@ -12,6 +12,8 @@
   },
   "keywords": [
     "react-native",
+    "react-component",
+    "ios",
     "i18n"
   ],
   "author": "Alexander Zaytsev",
