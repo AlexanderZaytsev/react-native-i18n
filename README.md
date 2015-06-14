@@ -1,6 +1,6 @@
 # react-native-i18n
 
-Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses the device's current locale as default.
+Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses the device's locale as default.
 
 ## Installation
 
@@ -13,7 +13,7 @@ Add `RNI18n.xcodeproj` to **Libraries** and add `libRNI18n.a` to **Link Binary W
 ```js
 var I18n = require('react-native-i18n');
 
-var Demo =  React.createClass({
+var Demo = React.createClass({
   render: function() {
     return (
       <Text>{I18n.t('greeting')}</Text>
@@ -31,8 +31,9 @@ I18n.translations = {
 }
 ```
 
-This will render `Hi!` for devices with the English locale, and `Bonjour` for devices with the French locale.
-For more info about I18n.js methods and settings see [its documentation](https://github.com/fnando/i18n-js#using-i18njs-with-other-languages-python-php-).
+This will render `Hi!` for devices with the English locale, and `Bonjour!` for devices with the French locale.
+
+For more info about I18n.js methods (`localize`, `pluralize`, etc) and settings see [its documentation](https://github.com/fnando/i18n-js#using-i18njs-with-other-languages-python-php-).
 
 ### Device's locale
 You can get the device's locale with the `RNI18n` native module:
