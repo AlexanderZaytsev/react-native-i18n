@@ -41,3 +41,6 @@ You can get the device's locale with the `RNI18n` native module:
 ```js
 var deviceLocale = require('react-native').NativeModules.RNI18n.locale
 ```
+
+## Licence
+MIT
