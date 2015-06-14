@@ -33,7 +33,7 @@ I18n.translations = {
 
 This will render `Hi!` for devices with the English locale, and `Bonjour!` for devices with the French locale.
 
-For more info about I18n.js methods (`localize`, `pluralize`, etc) and settings see [its documentation](https://github.com/fnando/i18n-js#using-i18njs-with-other-languages-python-php-).
+For more info about I18n.js methods (`localize`, `pluralize`, etc) and settings see [its documentation](https://github.com/fnando/i18n-js#setting-up).
 
 ### Device's locale
 You can get the device's locale with the `RNI18n` native module:
