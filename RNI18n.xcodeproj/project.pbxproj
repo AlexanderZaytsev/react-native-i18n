@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CDD7BF7C1B2D5125006FDA75 /* RNI18n.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDD7BF7B1B2D5125006FDA75 /* RNI18n.h */; };
+		CDD7BF7E1B2D5125006FDA75 /* RNI18n.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7BF7D1B2D5125006FDA75 /* RNI18n.m */; };
+		CDD7BF841B2D5126006FDA75 /* libRNI18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD7BF781B2D5125006FDA75 /* libRNI18n.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CDD7BF851B2D5126006FDA75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDD7BF701B2D5125006FDA75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDD7BF771B2D5125006FDA75;
+			remoteInfo = RNI18n;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CDD7BF761B2D5125006FDA75 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				CDD7BF7C1B2D5125006FDA75 /* RNI18n.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CDD7BF781B2D5125006FDA75 /* libRNI18n.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNI18n.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDD7BF7B1B2D5125006FDA75 /* RNI18n.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNI18n.h; sourceTree = "<group>"; };
+		CDD7BF7D1B2D5125006FDA75 /* RNI18n.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNI18n.m; sourceTree = "<group>"; };
+		CDD7BF831B2D5126006FDA75 /* RNI18nTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNI18nTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDD7BF891B2D5126006FDA75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CDD7BF751B2D5125006FDA75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDD7BF801B2D5126006FDA75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDD7BF841B2D5126006FDA75 /* libRNI18n.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CDD7BF6F1B2D5125006FDA75 = {
+			isa = PBXGroup;
+			children = (
+				CDD7BF7A1B2D5125006FDA75 /* RNI18n */,
+				CDD7BF871B2D5126006FDA75 /* RNI18nTests */,
+				CDD7BF791B2D5125006FDA75 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CDD7BF791B2D5125006FDA75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDD7BF781B2D5125006FDA75 /* libRNI18n.a */,
+				CDD7BF831B2D5126006FDA75 /* RNI18nTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDD7BF7A1B2D5125006FDA75 /* RNI18n */ = {
+			isa = PBXGroup;
+			children = (
+				CDD7BF7B1B2D5125006FDA75 /* RNI18n.h */,
+				CDD7BF7D1B2D5125006FDA75 /* RNI18n.m */,
+			);
+			path = RNI18n;
+			sourceTree = "<group>";
+		};
+		CDD7BF871B2D5126006FDA75 /* RNI18nTests */ = {
+			isa = PBXGroup;
+			children = (
+				CDD7BF881B2D5126006FDA75 /* Supporting Files */,
+			);
+			path = RNI18nTests;
+			sourceTree = "<group>";
+		};
+		CDD7BF881B2D5126006FDA75 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDD7BF891B2D5126006FDA75 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CDD7BF771B2D5125006FDA75 /* RNI18n */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDD7BF8C1B2D5126006FDA75 /* Build configuration list for PBXNativeTarget "RNI18n" */;
+			buildPhases = (
+				CDD7BF741B2D5125006FDA75 /* Sources */,
+				CDD7BF751B2D5125006FDA75 /* Frameworks */,
+				CDD7BF761B2D5125006FDA75 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RNI18n;
+			productName = RNI18n;
+			productReference = CDD7BF781B2D5125006FDA75 /* libRNI18n.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CDD7BF821B2D5126006FDA75 /* RNI18nTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDD7BF8F1B2D5126006FDA75 /* Build configuration list for PBXNativeTarget "RNI18nTests" */;
+			buildPhases = (
+				CDD7BF7F1B2D5126006FDA75 /* Sources */,
+				CDD7BF801B2D5126006FDA75 /* Frameworks */,
+				CDD7BF811B2D5126006FDA75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDD7BF861B2D5126006FDA75 /* PBXTargetDependency */,
+			);
+			name = RNI18nTests;
+			productName = RNI18nTests;
+			productReference = CDD7BF831B2D5126006FDA75 /* RNI18nTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CDD7BF701B2D5125006FDA75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Alexander Zaytsev";
+				TargetAttributes = {
+					CDD7BF771B2D5125006FDA75 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					CDD7BF821B2D5126006FDA75 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+				};
+			};
+			buildConfigurationList = CDD7BF731B2D5125006FDA75 /* Build configuration list for PBXProject "RNI18n" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CDD7BF6F1B2D5125006FDA75;
+			productRefGroup = CDD7BF791B2D5125006FDA75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDD7BF771B2D5125006FDA75 /* RNI18n */,
+				CDD7BF821B2D5126006FDA75 /* RNI18nTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CDD7BF811B2D5126006FDA75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDD7BF741B2D5125006FDA75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDD7BF7E1B2D5125006FDA75 /* RNI18n.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDD7BF7F1B2D5126006FDA75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CDD7BF861B2D5126006FDA75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDD7BF771B2D5125006FDA75 /* RNI18n */;
+			targetProxy = CDD7BF851B2D5126006FDA75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CDD7BF8A1B2D5126006FDA75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CDD7BF8B1B2D5126006FDA75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CDD7BF8D1B2D5126006FDA75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../reach-native/React/**",
+					"$(SRCROOT)/node_modules/react-native/React/**",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CDD7BF8E1B2D5126006FDA75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../reach-native/React/**",
+					"$(SRCROOT)/node_modules/react-native/React/**",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CDD7BF901B2D5126006FDA75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RNI18nTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CDD7BF911B2D5126006FDA75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RNI18nTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CDD7BF731B2D5125006FDA75 /* Build configuration list for PBXProject "RNI18n" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDD7BF8A1B2D5126006FDA75 /* Debug */,
+				CDD7BF8B1B2D5126006FDA75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDD7BF8C1B2D5126006FDA75 /* Build configuration list for PBXNativeTarget "RNI18n" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDD7BF8D1B2D5126006FDA75 /* Debug */,
+				CDD7BF8E1B2D5126006FDA75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDD7BF8F1B2D5126006FDA75 /* Build configuration list for PBXNativeTarget "RNI18nTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDD7BF901B2D5126006FDA75 /* Debug */,
+				CDD7BF911B2D5126006FDA75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CDD7BF701B2D5125006FDA75 /* Project object */;
+}
