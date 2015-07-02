@@ -1,6 +1,6 @@
 {
   "name": "react-native-i18n",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React Native and I18n.js integration",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,6 @@
     "react-native": "^0.5.0"
   },
   "peerDependencies": {
-    "react-native": "^0.5.0"
+    "react-native": ">=0.4.0 <1.0.0"
   }
 }
