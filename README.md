@@ -62,7 +62,14 @@ You can get the device's locale with the `RNI18n` native module:
 ```js
 var deviceLocale = require('react-native').NativeModules.RNI18n.locale
 ```
-Returns `en_US`.
+
+Returns `en_US`. This equals to:
+
+```js
+var I18n = require('react-native-i18n');
+var deviceLocale = I18n.locale;
+```
+
 
 ### I18n.js documentation
 For more info about I18n.js methods (`localize`, `pluralize`, etc) and settings see [its documentation](https://github.com/fnando/i18n-js#setting-up).
