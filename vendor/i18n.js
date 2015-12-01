@@ -292,7 +292,6 @@
       locale = locales.shift();
 
       if (this.baseLanguage !== null && locale == this.baseLanguage) {
-        console.log(`Devolviendo inglés: ${scope}`)
         return scope;
       }
 
