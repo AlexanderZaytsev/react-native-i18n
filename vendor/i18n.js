@@ -82,6 +82,9 @@
     // Set default locale. This locale will be used when fallback is enabled and
     // the translation doesn't exist in a particular locale.
       defaultLocale: "en"
+    // Set the base language. If it is not null, key will be returned directly when
+    // use this language in the device.
+    , baseLanguage: null
     // Set the current locale to `en`.
     , locale: "en"
     // Set the translation key separator.
@@ -106,6 +109,10 @@
     // Set default locale. This locale will be used when fallback is enabled and
     // the translation doesn't exist in a particular locale.
     this.defaultLocale = DEFAULT_OPTIONS.defaultLocale;
+
+    // Set the base language. If it is not null, key will be returned directly when
+    // use this language in the device.
+    this.baseLanguage = DEFAULT_OPTIONS.baseLanguage;
 
     // Set the current locale to `en`.
     this.locale = DEFAULT_OPTIONS.locale;
@@ -135,6 +142,9 @@
   I18n.initializeOptions = function() {
     if (typeof(this.defaultLocale) === "undefined" && this.defaultLocale !== null)
       this.defaultLocale = DEFAULT_OPTIONS.defaultLocale;
+
+    if (typeof(this.baseLanguage) === "undefined" && this.baseLanguage !== null)
+      this.baseLanguage = DEFAULT_OPTIONS.baseLanguage;
 
     if (typeof(this.locale) === "undefined" && this.locale !== null)
       this.locale = DEFAULT_OPTIONS.locale;
@@ -280,6 +290,12 @@
 
     while (locales.length) {
       locale = locales.shift();
+
+      if (this.baseLanguage !== null && locale == this.baseLanguage) {
+        console.log(`Devolviendo inglés: ${scope}`)
+        return scope;
+      }
+
       scopes = scope.split(this.defaultSeparator);
       translations = this.translations[locale];
 
