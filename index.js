@@ -1,8 +1,7 @@
 'use strict';
 
-var Platform = require('Platform');
-var I18n = require('./vendor/i18n');
-var { RNI18n } = require('react-native').NativeModules;
+let { Platform, NativeModules/RNI18N } = require('react-native')
+let I18n = require('./vendor/i18n')
 
 if (Platform.OS === 'android') {
   RNI18n.getCurrentLocale( function(locale) {
