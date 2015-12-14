@@ -1,7 +1,7 @@
 'use strict';
 
 let { Platform, NativeModules } = require('react-native')
-let { RNI18N } = NativeModules
+let { RNI18n } = NativeModules
 let I18n = require('./vendor/i18n')
 
 if (Platform.OS === 'android') {
