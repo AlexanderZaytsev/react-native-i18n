@@ -3,8 +3,9 @@ package com.i18n.reactnativei18n;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
-import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.Callback;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class ReactNativeI18nLocale extends ReactContextBaseJavaModule {
@@ -21,11 +22,10 @@ public class ReactNativeI18nLocale extends ReactContextBaseJavaModule {
       return "RNI18n";
   }
 
-  @ReactMethod
-  public void getCurrentLocale(
-      Callback successCallback
-  ) {
-      String current = reactContext.getResources().getConfiguration().locale.toString();
-      successCallback.invoke(current);
+  @Override
+  public Map<String, Object> getConstants() {
+      HashMap<String,Object> constants = new HashMap<String,Object>();
+      constants.put("locale", reactContext.getResources().getConfiguration().locale.toString());
+      return constants;
   }
 }
