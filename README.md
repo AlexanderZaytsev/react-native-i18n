@@ -1,4 +1,4 @@
-<img src="https://cdn0.iconfinder.com/data/icons/material-design-ii-glyph/614/3010_-_Translate-512.png" width="110" align="left"> 
+<img src="https://cdn0.iconfinder.com/data/icons/material-design-ii-glyph/614/3010_-_Translate-512.png" width="110" align="left">
 # react-native-i18n
 Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses the device's locale as default.
 <br/>
@@ -7,7 +7,7 @@ Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses 
 ## Installation
 If you're on react-native >= 0.40: `$ npm install react-native-i18n --save`  
 If you're on react-native < 0.40: `$ npm install react-native-i18n@0.1.1 --save`
-  
+
 ## Automatic setup
 After installing the npm package you need to link the native modules.  
 If you're using React-Native < 0.29 install [rnpm](https://github.com/rnpm/rnpm) with the command `npm install -g rnpm` and then link the library with the command `rnpm link`.   
@@ -18,10 +18,21 @@ If you're having any issue you can also try to install the library manually as f
 
 **[WARNING]** There is currently [an issue](https://github.com/AlexanderZaytsev/react-native-i18n/issues/43) with the react-native link / rnpm install method. Prefers the manual install until it is solved.
 
-## Manual setup 
+## Manual setup
 ### iOS
 Add `RNI18n.xcodeproj` to **Libraries** and add `libRNI18n.a` to **Link Binary With Libraries** under **Build Phases**.  
 [More info and screenshots about how to do this is available in the React Native documentation](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content).
+
+You also need to add the **localizations** you intend to support to the iOS project. To do that open
+your Xcode project:
+
+```
+$ open <your-project>.xcodeproj
+```
+
+and add the localizations you will support as shown here:
+
+![adding locales](docs/adding-locales.png)
 
 ### Android
 Add `react-native-i18n` to your `./android/settings.gradle` file as follows:
@@ -51,7 +62,7 @@ protected List<ReactPackage> getPackages() {
         ...
         new ReactNativeI18n(), // <-- Add it to the packages list
         ...
-    );	
+    );
 }
 
 ...
