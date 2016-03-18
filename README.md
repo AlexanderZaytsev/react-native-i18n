@@ -6,6 +6,12 @@ Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses 
 
 `$ npm install react-native-i18n --save`
 
+After installing the npm package you need to link the native modules. You can do so using [rnpm](https://github.com/rnpm/rnpm).
+
+`$ rnpm link react-native-i18n`
+
+Or you can do it manually as follows:
+
 ### iOS
 
 Add `RNI18n.xcodeproj` to **Libraries** and add `libRNI18n.a` to **Link Binary With Libraries** under **Build Phases**. [More info and screenshots about how to do this is available in the React Native documentation](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content).
