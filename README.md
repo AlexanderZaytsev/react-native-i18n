@@ -44,13 +44,15 @@ import com.i18n.reactnativei18n.ReactNativeI18n;  // <---- import this one
 
 
 @Override
-protected void onCreate(Bundle savedInstanceState) {
+protected List<ReactPackage> getPackages() {
 	...
 
-	mReactInstanceManager = ReactInstanceManager.builder()
-	.setApplication(getApplication())
-	.addPackage(new ReactNativeI18n())  // <---- add this line
-	.build();
+	protected List<ReactPackage> getPackages() {
+        	return Arrays.<ReactPackage>asList(
+                	new MainReactPackage(),
+                	new ReactNativeI18n()   // <---- add this line
+                );
+    	}
 
 	...
 }
