@@ -1,3 +1,5 @@
+ATTENTION: This repo is looking for a new developer to take over. Please email me alexander@say26.com.
+
 # react-native-i18n
 
 Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses the device's locale as default.
