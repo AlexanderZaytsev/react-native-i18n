@@ -1,5 +1,3 @@
-ATTENTION: This repo is looking for a new developer to take over. Please email me alexander@say26.com.
-
 # react-native-i18n
 
 Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses the device's locale as default.
@@ -8,9 +6,10 @@ Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses 
 
 `$ npm install react-native-i18n --save`
 
-After installing the npm package you need to link the native modules. You can do so using [rnpm](https://github.com/rnpm/rnpm).
-
-`$ rnpm link react-native-i18n`
+After installing the npm package you need to link the native modules.  
+If you're using React-Native < 0.29 install [rnpm](https://github.com/rnpm/rnpm) with the command `npm install -g rnpm` and then link the library with the command `rnpm link`.   
+If you're using React-Native >= 0.29 just link the library with the command `react-native link`.
+You can do so using [rnpm](https://github.com/rnpm/rnpm).  
 
 Or you can do it manually as follows:
 
@@ -66,19 +65,19 @@ After that, you will need to recompile your project with `react-native run-andro
 
 ## Usage
 
-```js
-var I18n = require('react-native-i18n');
+```javascript
+import I18n from 'react-native-i18n'
 
-var Demo = React.createClass({
-  render: function() {
+class Demo extends React.Component {
+  render () {
     return (
       <Text>{I18n.t('greeting')}</Text>
     )
   }
-});
+}
 
 // Enable fallbacks if you want `en-US` and `en-GB` to fallback to `en`
-I18n.fallbacks = true;
+I18n.fallbacks = true
 
 I18n.translations = {
   en: {
@@ -99,7 +98,7 @@ When fallbacks are enabled (which is generally recommended), `i18n.js` will try 
 
 **Note**: iOS locales use underscored (`en_US`) but `i18n.js` locales are dasherized (`en-US`). This conversion is done automatically for you.
 ```js
-I18n.fallbacks = true;
+I18n.fallbacks = true
 
 I18n.translations = {
   'en': {
@@ -117,14 +116,8 @@ For a device with a `en_GB` locale this will return `Hi from the UK!'`, for a de
 You can get the device's locale with the `RNI18n` native module:
 
 ```js
-var deviceLocale = require('react-native').NativeModules.RNI18n.locale
-```
-
-Returns `en_US`. You can also do:
-
-```js
-var I18n = require('react-native-i18n');
-var deviceLocale = I18n.locale;
+import ReactNativeI18n from 'react-native-i18n'
+const deviceLocale = ReactNativeI18n.locale
 ```
 
 Returns `en-US`.
