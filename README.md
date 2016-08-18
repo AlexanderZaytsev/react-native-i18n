@@ -1,7 +1,10 @@
+<img src="https://cdn0.iconfinder.com/data/icons/material-design-ii-glyph/614/3010_-_Translate-512.png" width="110" align="left"> 
 # react-native-i18n
 Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses the device's locale as default.
+<br/>
+<br/>
 
-## Automatic install
+## Automatic setup
 `$ npm install react-native-i18n --save`
 
 After installing the npm package you need to link the native modules.  
@@ -11,9 +14,10 @@ You can do so using [rnpm](https://github.com/rnpm/rnpm).
 
 If you're having any issue you can also try to install the library manually as follows.
 
-## Manual install 
-## iOS
-Add `RNI18n.xcodeproj` to **Libraries** and add `libRNI18n.a` to **Link Binary With Libraries** under **Build Phases**. [More info and screenshots about how to do this is available in the React Native documentation](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content).
+## Manual setup 
+### iOS
+Add `RNI18n.xcodeproj` to **Libraries** and add `libRNI18n.a` to **Link Binary With Libraries** under **Build Phases**.  
+[More info and screenshots about how to do this is available in the React Native documentation](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content).
 
 ### Android
 Add `react-native-i18n` to your `./android/settings.gradle` file as follows:
