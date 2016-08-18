@@ -16,7 +16,7 @@
 RCT_EXPORT_MODULE();
 
 -(NSString*) getCurrentLocale{
-    NSString *localeString=[[NSLocale currentLocale] localeIdentifier];
+    NSString *localeString=[[NSLocale preferredLanguages] objectAtIndex:0];
     return localeString;
 }
 
