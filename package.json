@@ -3,9 +3,6 @@
   "version": "0.0.8",
   "description": "React Native and I18n.js integration",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "github.com/AlexanderZaytsev/react-native-i18n.git"
