@@ -1,6 +1,6 @@
 {
   "name": "react-native-i18n",
-  "version": "0.0.8",
+  "version": "0.1.0-beta.0",
   "description": "React Native and I18n.js integration",
   "main": "index.js",
   "repository": {
