@@ -20,5 +20,5 @@
   "license": "MIT",
   "devDependencies": {
     "react-native": "^0.5.0"
-  },
+  }
 }
