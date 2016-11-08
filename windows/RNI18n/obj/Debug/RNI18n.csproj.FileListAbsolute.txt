@@ -1,1 +1,0 @@
-C:\code\react-native-i18n\windows\RNI18n\obj\Debug\RNI18n.csprojResolveAssemblyReference.cache
