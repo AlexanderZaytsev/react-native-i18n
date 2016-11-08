@@ -2,6 +2,7 @@
 using ReactNative.Collections;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace ReactNative.Modules.RNI18n
 {
@@ -13,6 +14,13 @@ namespace ReactNative.Modules.RNI18n
             {
                 return "RNI18n";
             }
+        }
+
+        public override GetConstants()
+        {
+            Dictionary<String, Object> constants = new Dictionary<string, object>();
+            constants.Add("locale", System.Globalization.CultureInfo.CurrentCulture.Name);
+            return constants;
         }
     }
 }
