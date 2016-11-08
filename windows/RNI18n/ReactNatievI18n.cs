@@ -16,11 +16,14 @@ namespace ReactNative.Modules.RNI18n
             }
         }
 
-        public override Dictionary<String, Object> Constants()
+        public override IReadOnlyDictionary<String, Object> Constants
         {
-            Dictionary<String, Object> constants = new Dictionary<string, object>();
-            constants.Add("locale", System.Globalization.CultureInfo.CurrentCulture.Name);
-            return constants;
+            get
+            {
+                Dictionary<String, Object> constants = new Dictionary<string, object>();
+                constants.Add("locale", System.Globalization.CultureInfo.CurrentCulture.Name);
+                return constants;
+            }
         }
     }
 }
