@@ -16,7 +16,7 @@ namespace ReactNative.Modules.RNI18n
             }
         }
 
-        public override GetConstants()
+        public override Dictionary<String, Object> Constants()
         {
             Dictionary<String, Object> constants = new Dictionary<string, object>();
             constants.Add("locale", System.Globalization.CultureInfo.CurrentCulture.Name);
