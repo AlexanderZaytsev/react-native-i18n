@@ -1,6 +1,6 @@
 {
   "name": "react-native-i18n",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "React Native and I18n.js integration",
   "main": "index.js",
   "repository": {
@@ -16,6 +16,6 @@
   "author": "Alexander Zaytsev",
   "license": "MIT",
   "devDependencies": {
-    "react-native": "^0.5.0"
+    "react-native": "^0.40.0"
   }
 }
