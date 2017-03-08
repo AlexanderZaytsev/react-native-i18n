@@ -38,6 +38,61 @@
     return ("0" + number.toString()).substr(-2);
   };
 
+  // Improved toFixed number rounding function with support for unprecise floating points
+  // JavaScript's standard toFixed function does not round certain numbers correctly (for example 0.105 with precision 2).
+  var toFixed = function(number, precision) {
+    return decimalAdjust('round', number, -precision).toFixed(precision);
+  };
+
+  // Is a given variable an object?
+  // Borrowed from Underscore.js
+  var isObject = function(obj) {
+    var type = typeof obj;
+    return type === 'function' || type === 'object' && !!obj;
+  };
+
+  // Is a given value an array?
+  // Borrowed from Underscore.js
+  var isArray = function(obj) {
+    if (Array.isArray) {
+      return Array.isArray(obj);
+    };
+    return Object.prototype.toString.call(obj) === '[object Array]';
+  };
+
+  var decimalAdjust = function(type, value, exp) {
+    // If the exp is undefined or zero...
+    if (typeof exp === 'undefined' || +exp === 0) {
+      return Math[type](value);
+    }
+    value = +value;
+    exp = +exp;
+    // If the value is not a number or the exp is not an integer...
+    if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
+      return NaN;
+    }
+    // Shift
+    value = value.toString().split('e');
+    value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)));
+    // Shift back
+    value = value.toString().split('e');
+    return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
+  }
+
+  var merge = function (dest, obj) {
+    var key, value;
+    for (key in obj) if (obj.hasOwnProperty(key)) {
+      value = obj[key];
+      if (Object.prototype.toString.call(value) === '[object String]') {
+        dest[key] = value;
+      } else {
+        if (dest[key] == null) dest[key] = {};
+        merge(dest[key], value);
+      }
+    }
+    return dest;
+  };
+
   // Set default days/months translations.
   var DATE = {
       day_names: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -82,14 +137,11 @@
     // Set default locale. This locale will be used when fallback is enabled and
     // the translation doesn't exist in a particular locale.
       defaultLocale: "en"
-    // Set the base language. If it is not null, key will be returned directly when
-    // use this language in the device.
-    , baseLanguage: null
     // Set the current locale to `en`.
     , locale: "en"
     // Set the translation key separator.
     , defaultSeparator: "."
-    // Set the placeholder format. Accepts `{placeholder}}` and `%{placeholder}`.}
+    // Set the placeholder format. Accepts `{{placeholder}}` and `%{placeholder}`.
     , placeholder: /(?:\{\{|%\{)(.*?)(?:\}\}?)/gm
     // Set if engine should fallback to the default locale when a translation
     // is missing.
@@ -109,10 +161,6 @@
     // Set default locale. This locale will be used when fallback is enabled and
     // the translation doesn't exist in a particular locale.
     this.defaultLocale = DEFAULT_OPTIONS.defaultLocale;
-
-    // Set the base language. If it is not null, key will be returned directly when
-    // use this language in the device.
-    this.baseLanguage = DEFAULT_OPTIONS.baseLanguage;
 
     // Set the current locale to `en`.
     this.locale = DEFAULT_OPTIONS.locale;
@@ -143,9 +191,6 @@
     if (typeof(this.defaultLocale) === "undefined" && this.defaultLocale !== null)
       this.defaultLocale = DEFAULT_OPTIONS.defaultLocale;
 
-    if (typeof(this.baseLanguage) === "undefined" && this.baseLanguage !== null)
-      this.baseLanguage = DEFAULT_OPTIONS.baseLanguage;
-
     if (typeof(this.locale) === "undefined" && this.locale !== null)
       this.locale = DEFAULT_OPTIONS.locale;
 
@@ -160,6 +205,12 @@
 
     if (typeof(this.translations) === "undefined" && this.translations !== null)
       this.translations = DEFAULT_OPTIONS.translations;
+
+    if (typeof(this.missingBehaviour) === "undefined" && this.missingBehaviour !== null)
+      this.missingBehaviour = DEFAULT_OPTIONS.missingBehaviour;
+
+    if (typeof(this.missingTranslationPrefix) === "undefined" && this.missingTranslationPrefix !== null)
+      this.missingTranslationPrefix = DEFAULT_OPTIONS.missingTranslationPrefix;
   };
   I18n.initializeOptions();
 
@@ -189,7 +240,7 @@
       result = result(locale);
     }
 
-    if (result instanceof Array === false) {
+    if (isArray(result) === false) {
       result = [result];
     }
 
@@ -290,11 +341,6 @@
 
     while (locales.length) {
       locale = locales.shift();
-
-      if (this.baseLanguage !== null && locale == this.baseLanguage) {
-        return scope;
-      }
-
       scopes = scope.split(this.defaultSeparator);
       translations = this.translations[locale];
 
@@ -423,7 +469,7 @@
 
     if (typeof(translation) === "string") {
       translation = this.interpolate(translation, options);
-    } else if (translation instanceof Object && this.isSet(options.count)) {
+    } else if (isObject(translation) && this.isSet(options.count)) {
       translation = this.pluralize(options.count, translation, options);
     }
 
@@ -453,9 +499,9 @@
       if (this.isSet(options[name])) {
         value = options[name].toString().replace(/\$/gm, "_#$#_");
       } else if (name in options) {
-        value = this.nullPlaceholder(placeholder, message);
+        value = this.nullPlaceholder(placeholder, message, options);
       } else {
-        value = this.missingPlaceholder(placeholder, message);
+        value = this.missingPlaceholder(placeholder, message, options);
       }
 
       regex = new RegExp(placeholder.replace(/\{/gm, "\\{").replace(/\}/gm, "\\}"));
@@ -472,7 +518,7 @@
     options = this.prepareOptions(options);
     var translations, pluralizer, keys, key, message;
 
-    if (scope instanceof Object) {
+    if (isObject(scope)) {
       translations = scope;
     } else {
       translations = this.lookup(scope, options);
@@ -510,14 +556,15 @@
           function(match, p1, p2) {return p1 + ' ' + p2.toLowerCase()} );
     }
 
+    var localeForTranslation = (options != null && options.locale != null) ? options.locale : this.currentLocale();
     var fullScope           = this.getFullScope(scope, options);
-    var fullScopeWithLocale = [this.currentLocale(), fullScope].join(this.defaultSeparator);
+    var fullScopeWithLocale = [localeForTranslation, fullScope].join(this.defaultSeparator);
 
     return '[missing "' + fullScopeWithLocale + '" translation]';
   };
 
   // Return a missing placeholder message for given parameters
-  I18n.missingPlaceholder = function(placeholder, message) {
+  I18n.missingPlaceholder = function(placeholder, message, options) {
     return "[missing " + placeholder + " value]";
   };
 
@@ -544,7 +591,7 @@
     );
 
     var negative = number < 0
-      , string = Math.abs(number).toFixed(options.precision).toString()
+      , string = toFixed(Math.abs(number), options.precision).toString()
       , parts = string.split(".")
       , precision
       , buffer = []
@@ -746,6 +793,10 @@
 
     options = this.prepareOptions(options, DATE);
 
+    if (isNaN(date.getTime())) {
+      throw new Error('I18n.strftime() requires a valid date object, but received an invalid date.');
+    }
+
     var weekDay = date.getDay()
       , day = date.getDate()
       , year = date.getFullYear()
@@ -872,7 +923,23 @@
     }
 
     return scope;
-  }
+  };
+  /**
+   * Merge obj1 with obj2 (shallow merge), without modifying inputs
+   * @param {Object} obj1
+   * @param {Object} obj2
+   * @returns {Object} Merged values of obj1 and obj2
+   *
+   * In order to support ES3, `Object.prototype.hasOwnProperty.call` is used
+   * Idea is from:
+   * https://stackoverflow.com/questions/8157700/object-has-no-hasownproperty-method-i-e-its-undefined-ie8
+   */
+  I18n.extend = function ( obj1, obj2 ) {
+    if (typeof(obj1) === "undefined" && typeof(obj2) === "undefined") {
+      return {};
+    }
+    return merge(obj1, obj2);
+  };
 
   // Set aliases, so we can save some typing.
   I18n.t = I18n.translate;
