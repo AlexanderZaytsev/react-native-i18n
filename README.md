@@ -16,6 +16,8 @@ You can do so using [rnpm](https://github.com/rnpm/rnpm).
 
 If you're having any issue you can also try to install the library manually as follows.
 
+**[WARNING]** There is currently [an issue](https://github.com/AlexanderZaytsev/react-native-i18n/issues/43) with the react-native link / rnpm install method. Prefers the manual install until it is solved.
+
 ## Manual setup 
 ### iOS
 Add `RNI18n.xcodeproj` to **Libraries** and add `libRNI18n.a` to **Link Binary With Libraries** under **Build Phases**.  
