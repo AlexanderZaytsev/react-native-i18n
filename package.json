@@ -14,8 +14,5 @@
     "i18n"
   ],
   "author": "Alexander Zaytsev",
-  "license": "MIT",
-  "devDependencies": {
-    "react-native": "^0.40.0"
-  }
+  "license": "MIT"
 }
