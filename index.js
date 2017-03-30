@@ -1,9 +1,7 @@
-'use strict';
+import {NativeModules} from 'react-native'
+import I18n from 'i18n-js'
+const {RNI18n} = NativeModules
 
-const { NativeModules } = require('react-native');
-const { RNI18n } = NativeModules;
-let I18n = require('i18n-js');
+I18n.locale = RNI18n.locale
 
-I18n.locale = (RNI18n) ? RNI18n.locale.replace(/_/, '-') : '';
-
-module.exports = I18n;
+export default I18n
