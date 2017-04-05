@@ -6,13 +6,11 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "react": "~15.4.1",
-    "react-native": "0.42.3",
-    "react-native-i18n": "file:../",
-    "react-native-windows": "^0.42.0"
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.43.1",
+    "react-native-i18n": "file:../"
   },
   "devDependencies": {
-    "babel-preset-react-native": "1.9.1",
-    "rnpm-plugin-windows": "^0.2.4"
+    "babel-preset-react-native": "1.9.1"
   }
 }
