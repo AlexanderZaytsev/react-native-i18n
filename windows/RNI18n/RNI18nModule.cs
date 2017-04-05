@@ -4,28 +4,25 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace Com.AlexanderZaytsev.RNI18n
-{
-  class RNI18nModule : ReactContextNativeModuleBase
-  {
-    public RNI18nModule(ReactContext reactContext) : base(reactContext)
-    {
-    }
+namespace Com.AlexanderZaytsev.RNI18n {
 
-    public override string Name
-    {
-      get
-      {
+  class RNI18nModule : ReactContextNativeModuleBase {
+
+    public RNI18nModule(ReactContext reactContext) : base(reactContext) {}
+
+    public override string Name {
+      get {
         return "RNI18n";
       }
     }
 
-    public override IReadOnlyDictionary<string, object> Constants
-    {
-      get
-      {
+    public override IReadOnlyDictionary<string, object> Constants {
+      get {
         Dictionary<string, object> constants = new Dictionary<string, object>();
-        constants["locale"] = System.Globalization.CultureInfo.CurrentCulture.Name;
+
+        constants["language"] = Windows.System.UserProfile.GlobalizationPreferences.Languages[0];
+        constants["languages"] = Windows.System.UserProfile.GlobalizationPreferences.Languages;
+
         return constants;
       }
     }
