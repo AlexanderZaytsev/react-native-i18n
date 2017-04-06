@@ -1,15 +1,17 @@
 package com.alexanderzaytsev.rn18n;
 
 import android.os.Build;
+import android.os.LocaleList;
 
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
-import com.facebook.react.module.annotations.ReactModule;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
-@ReactModule(name = "RNI18n")
 public class RNI18nModule extends ReactContextBaseJavaModule {
 
   public RNI18nModule(ReactApplicationContext reactContext) {
@@ -21,21 +23,27 @@ public class RNI18nModule extends ReactContextBaseJavaModule {
     return "RNI18n";
   }
 
-  private String getCurrentLocale() {
-    Locale currentLocale = (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-      ? getReactApplicationContext().getResources().getConfiguration().getLocales().get(0)
-      : getReactApplicationContext().getResources().getConfiguration().locale;
+  private boolean isSupportingPreferredLanguages() {
+    return Build.VERSION.SDK_INT >= Build.VERSION_CODES.N;
+  }
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-      return currentLocale.toLanguageTag();
+  private LocaleList getLocales() {
+    return this.isSupportingPreferredLanguages()
+      ? getReactApplicationContext().getResources().getConfiguration().getLocales()
+      : new LocaleList(getReactApplicationContext().getResources().getConfiguration().locale);
+  }
+
+  private String toLanguageTag(Locale locale) {
+    if (this.isSupportingPreferredLanguages()) {
+      return locale.toLanguageTag();
     }
 
     StringBuilder builder = new StringBuilder();
-    builder.append(currentLocale.getLanguage());
+    builder.append(locale.getLanguage());
 
-    if (currentLocale.getCountry() != null) {
+    if (locale.getCountry() != null) {
       builder.append("-");
-      builder.append(currentLocale.getCountry());
+      builder.append(locale.getCountry());
     }
 
     return builder.toString();
@@ -44,7 +52,16 @@ public class RNI18nModule extends ReactContextBaseJavaModule {
   @Override
   public Map<String, Object> getConstants() {
     HashMap<String,Object> constants = new HashMap<String,Object>();
-    constants.put("locale", this.getCurrentLocale());
+    LocaleList locales = this.getLocales();
+    WritableArray languages = Arguments.createArray();
+
+    for (int i = 0; i < locales.size(); i++) {
+      languages.pushString(this.toLanguageTag(locales.get(i)));
+    }
+
+    constants.put("language", languages.getString(0));
+    constants.put("languages", languages);
+
     return constants;
   }
 }
