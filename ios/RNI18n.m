@@ -4,30 +4,18 @@
 
 RCT_EXPORT_MODULE();
 
-- (NSString*) getCurrentLocale
-{
-  NSString *preferredLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+- (NSDictionary *)constantsToExport {
+  NSArray *preferredLanguages = [NSLocale preferredLanguages];
+  NSMutableArray *languages = [NSMutableArray array];
 
-  if ([preferredLanguage rangeOfString:@"-"].location != NSNotFound) {
-    return preferredLanguage;
+  for (id language in preferredLanguages) {
+    [languages addObject:[language stringByReplacingOccurrencesOfString:@"_" withString:@"-"]];
   }
 
-  if ([preferredLanguage rangeOfString:@"_"].location != NSNotFound) {
-    return [preferredLanguage stringByReplacingOccurrencesOfString:@"_" withString:@"-"];
-  }
-
-  NSString *countryCode = [[NSLocale currentLocale] objectForKey:NSLocaleCountryCode];
-
-  if (countryCode != nil) {
-    return [NSString stringWithFormat:@"%@-%@", preferredLanguage, countryCode];
-  }
-
-  return preferredLanguage;
-}
-
-- (NSDictionary *)constantsToExport
-{
-  return @{ @"locale": [self getCurrentLocale] };
+  return @{
+    @"language": [languages objectAtIndex:0],
+    @"languages": languages
+  };
 }
 
 @end
