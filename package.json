@@ -16,6 +16,6 @@
   "author": "Alexander Zaytsev",
   "license": "MIT",
   "dependencies": {
-    "i18n-js": "github:fnando/i18n-js#v3.0.0.rc16"
+    "i18n-js": "github:fnando/i18n-js#v3.0.0"
   }
 }
