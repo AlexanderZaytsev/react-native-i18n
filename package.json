@@ -1,7 +1,9 @@
 {
   "name": "react-native-i18n",
-  "version": "1.0.0",
-  "description": "React Native and I18n.js integration",
+  "version": "2.0.0",
+  "description": "Provide I18n to your React Native application",
+  "license": "MIT",
+  "author": "Alexander Zaytsev",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -13,8 +15,6 @@
     "ios",
     "i18n"
   ],
-  "author": "Alexander Zaytsev",
-  "license": "MIT",
   "dependencies": {
     "i18n-js": "github:fnando/i18n-js#v3.0.0"
   }
