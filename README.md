@@ -98,6 +98,44 @@ I18n.translations = {
 
 This will render `Hi!` for devices with the English locale, and `Bonjour!` for devices with the French locale.
 
+## Usage with multiple location files
+```javascript
+// app/i18n/locales/en.js
+export default {  
+  greeting: 'Hi!'
+};
+
+// app/i18n/locales/fr.js
+export default {  
+  greeting: 'Bonjour!'
+};
+
+// app/i18n/i18n.js
+import I18n from 'react-native-i18n';
+import en from './locales/en';
+import es from './locales/es';  
+
+I18n.fallbacks = true;
+
+I18n.translations = {
+  en,
+  fr
+};
+
+export default I18n; 
+
+// usage in component 
+import I18n from 'app/i18n/i18n';
+
+class Demo extends React.Component {
+  render () {
+    return (
+      <Text>{I18n.t('greeting')}</Text>
+    )
+  }
+}
+```
+
 ### Fallbacks
 When fallbacks are enabled (which is generally recommended), `i18n.js` will try to look up translations in the following order (for a device with `en_US` locale):
 - en-US
