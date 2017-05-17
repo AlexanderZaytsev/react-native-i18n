@@ -1,7 +1,7 @@
 // @ flow
 
 import React, { Component } from 'react';
-import { language, languages } from 'react-native-i18n';
+import { getLanguages } from 'react-native-i18n';
 
 import {
   Platform,
@@ -12,19 +12,22 @@ import {
 } from 'react-native';
 
 export default class extends Component {
+  state = { languages: [] }
+
+  componentWillMount() {
+    getLanguages().then(languages => {
+      this.setState({ languages })
+    })
+  }
+
   render() {
     return (
       <ScrollView style={styles.container}>
-        <Text style={styles.title}>Constants</Text>
+        <Text style={styles.title}>Methods</Text>
 
         <View style={styles.line}>
-          <Text style={styles.label}>language: </Text>
-          <Text>{JSON.stringify(language)}</Text>
-        </View>
-
-        <View style={styles.line}>
-          <Text style={styles.label}>languages: </Text>
-          <Text>{JSON.stringify(languages)}</Text>
+          <Text style={styles.label}>getLanguages (Promise): </Text>
+          <Text>{JSON.stringify(this.state.languages)}</Text>
         </View>
       </ScrollView>
     );

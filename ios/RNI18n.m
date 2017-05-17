@@ -5,26 +5,25 @@
 
 RCT_EXPORT_MODULE();
 
-- (NSDictionary *)constantsToExport {
+- (NSMutableArray *)toLanguageTags:(NSArray *)languages {
+  NSMutableArray *languageTags = [NSMutableArray array];
+
+  for (id l in languages) {
+    [languageTags addObject:[l stringByReplacingOccurrencesOfString:@"_" withString:@"-"]];
+  }
+
+  return languageTags;
+}
+
+RCT_EXPORT_METHOD(getLanguages:(RCTPromiseResolveBlock)resolve
+                  rejecter:(__unused RCTPromiseRejectBlock)reject) {
   NSArray *preferredLanguages = [NSLocale preferredLanguages];
 
-  if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9) {
-    return @{
-      @"language": [preferredLanguages objectAtIndex:0],
-      @"languages": preferredLanguages
-    };
-  }
-
-  NSMutableArray *forcedLanguageTags = [NSMutableArray array];
-
-  for (id l in preferredLanguages) {
-    [forcedLanguageTags addObject:[l stringByReplacingOccurrencesOfString:@"_" withString:@"-"]];
-  }
-
-  return @{
-    @"language": [forcedLanguageTags objectAtIndex:0],
-    @"languages": forcedLanguageTags
-  };
+  resolve(
+    [[[UIDevice currentDevice] systemVersion] floatValue] >= 9
+      ? preferredLanguages
+      : [self toLanguageTags:preferredLanguages]
+  );
 }
 
 @end
