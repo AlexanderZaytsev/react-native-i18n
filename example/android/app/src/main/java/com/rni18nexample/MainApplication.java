@@ -7,7 +7,8 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.alexanderzaytsev.rn18n.RNI18nPackage;
+
+import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 
 import java.util.Arrays;
 import java.util.List;

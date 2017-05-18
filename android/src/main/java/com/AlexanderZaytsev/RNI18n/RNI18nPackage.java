@@ -1,4 +1,4 @@
-package com.alexanderzaytsev.rn18n;
+package com.AlexanderZaytsev.RNI18n;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
