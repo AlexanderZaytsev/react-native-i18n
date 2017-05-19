@@ -6,6 +6,7 @@ const { RNI18n } = NativeModules;
 
 // I18n.locale = RNI18n.language;
 
-export const getLanguages = RNI18n.getLanguages;
+// export const getLanguages = RNI18n.getLanguages;
+// export const languages = RNI18n.languages;
 
 export default I18n;

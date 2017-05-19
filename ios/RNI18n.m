@@ -15,15 +15,21 @@ RCT_EXPORT_MODULE();
   return languageTags;
 }
 
-RCT_EXPORT_METHOD(getLanguages:(RCTPromiseResolveBlock)resolve
-                  rejecter:(__unused RCTPromiseRejectBlock)reject) {
+- (NSArray *)getPreferredLanguages {
   NSArray *preferredLanguages = [NSLocale preferredLanguages];
 
-  resolve(
-    [[[UIDevice currentDevice] systemVersion] floatValue] >= 9
-      ? preferredLanguages
-      : [self toLanguageTags:preferredLanguages]
-  );
+  return [[[UIDevice currentDevice] systemVersion] floatValue] >= 9
+    ? preferredLanguages
+    : [self toLanguageTags:preferredLanguages];
+}
+
+- (NSDictionary *)constantsToExport {
+  return @{ @"languages": [self getPreferredLanguages] };
+}
+
+RCT_EXPORT_METHOD(getLanguages:(RCTPromiseResolveBlock)resolve
+                  rejecter:(__unused RCTPromiseRejectBlock)reject) {
+  resolve([self getPreferredLanguages]);
 }
 
 @end

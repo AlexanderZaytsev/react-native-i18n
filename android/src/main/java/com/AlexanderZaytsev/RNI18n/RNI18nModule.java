@@ -10,7 +10,9 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableArray;
 
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 public class RNI18nModule extends ReactContextBaseJavaModule {
 
@@ -39,20 +41,32 @@ public class RNI18nModule extends ReactContextBaseJavaModule {
     return builder.toString();
   }
 
+  private WritableArray getLocaleList() {
+    LocaleList locales = Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
+      ? getReactApplicationContext().getResources().getConfiguration().getLocales()
+      : new LocaleList(getReactApplicationContext().getResources().getConfiguration().locale);
+
+    WritableArray array = Arguments.createArray();
+
+    for (int i = 0; i < locales.size(); i++) {
+      array.pushString(this.toLanguageTag(locales.get(i)));
+    }
+
+    return array;
+  }
+
+  @Override
+  public Map<String, Object> getConstants() {
+    HashMap<String, Object> constants = new HashMap<String,Object>();
+    constants.put("languages", this.getLocaleList());
+
+    return constants;
+  }
+
   @ReactMethod
   public void getLanguages(Promise promise) {
     try {
-      LocaleList locales = Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
-        ? getReactApplicationContext().getResources().getConfiguration().getLocales()
-        : new LocaleList(getReactApplicationContext().getResources().getConfiguration().locale);
-
-      WritableArray languages = Arguments.createArray();
-
-      for (int i = 0; i < locales.size(); i++) {
-        languages.pushString(this.toLanguageTag(locales.get(i)));
-      }
-
-      promise.resolve(languages);
+      promise.resolve(this.getLocaleList());
     } catch (Exception e) {
       promise.reject(e);
     }

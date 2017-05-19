@@ -1,7 +1,9 @@
 // @ flow
 
 import React, { Component } from 'react';
-import { getLanguages } from 'react-native-i18n';
+// import { languages, getLanguages } from 'react-native-i18n';
+import { NativeModules } from 'react-native';
+const { getLanguages, languages } = NativeModules.RNI18n;
 
 import {
   Platform,
@@ -23,7 +25,14 @@ export default class extends Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        <Text style={styles.title}>Methods</Text>
+        <Text style={styles.title}>Internal constants</Text>
+
+        <View style={styles.line}>
+          <Text style={styles.label}>languages: </Text>
+          <Text>{JSON.stringify(languages)}</Text>
+        </View>
+
+        <Text style={styles.title}>Internal methods</Text>
 
         <View style={styles.line}>
           <Text style={styles.label}>getLanguages (Promise): </Text>
@@ -48,6 +57,7 @@ const styles = StyleSheet.create({
   },
   line: {
     flexDirection: 'row',
+    marginBottom: 16,
   },
   label: {
     fontWeight: '700',
