@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6463C81E1EBA09940095B8CD /* RNI18n.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDD7BF7B1B2D5125006FDA75 /* RNI18n.h */; };
+		6463C81F1EBA099A0095B8CD /* RNI18n.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7BF7D1B2D5125006FDA75 /* RNI18n.m */; };
 		CDD7BF7C1B2D5125006FDA75 /* RNI18n.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDD7BF7B1B2D5125006FDA75 /* RNI18n.h */; };
 		CDD7BF7E1B2D5125006FDA75 /* RNI18n.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7BF7D1B2D5125006FDA75 /* RNI18n.m */; };
 		CDD7BF841B2D5126006FDA75 /* libRNI18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD7BF781B2D5125006FDA75 /* libRNI18n.a */; };
@@ -79,6 +81,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		6463C8131EBA09690095B8CD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				6463C81E1EBA09940095B8CD /* RNI18n.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CDD7BF761B2D5125006FDA75 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		1A54B2001E1E5E84000AD278 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		6463C8151EBA09690095B8CD /* libRNI18n.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNI18n.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD7BF781B2D5125006FDA75 /* libRNI18n.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNI18n.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD7BF7B1B2D5125006FDA75 /* RNI18n.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNI18n.h; sourceTree = "<group>"; };
 		CDD7BF7D1B2D5125006FDA75 /* RNI18n.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNI18n.m; sourceTree = "<group>"; };
@@ -100,6 +113,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6463C8121EBA09690095B8CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CDD7BF751B2D5125006FDA75 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,6 +175,7 @@
 			children = (
 				CDD7BF781B2D5125006FDA75 /* libRNI18n.a */,
 				CDD7BF831B2D5126006FDA75 /* RNI18nTests.xctest */,
+				6463C8151EBA09690095B8CD /* libRNI18n.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,6 +192,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6463C8141EBA09690095B8CD /* RNI18n-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6463C81D1EBA09690095B8CD /* Build configuration list for PBXNativeTarget "RNI18n-tvOS" */;
+			buildPhases = (
+				6463C8111EBA09690095B8CD /* Sources */,
+				6463C8121EBA09690095B8CD /* Frameworks */,
+				6463C8131EBA09690095B8CD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RNI18n-tvOS";
+			productName = "RNI18N-tvOS";
+			productReference = 6463C8151EBA09690095B8CD /* libRNI18n.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		CDD7BF771B2D5125006FDA75 /* RNI18n */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDD7BF8C1B2D5126006FDA75 /* Build configuration list for PBXNativeTarget "RNI18n" */;
@@ -215,6 +253,10 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Alexander Zaytsev";
 				TargetAttributes = {
+					6463C8141EBA09690095B8CD = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 					CDD7BF771B2D5125006FDA75 = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
@@ -243,6 +285,7 @@
 			targets = (
 				CDD7BF771B2D5125006FDA75 /* RNI18n */,
 				CDD7BF821B2D5126006FDA75 /* RNI18nTests */,
+				6463C8141EBA09690095B8CD /* RNI18n-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -317,6 +360,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6463C8111EBA09690095B8CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6463C81F1EBA099A0095B8CD /* RNI18n.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CDD7BF741B2D5125006FDA75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,6 +394,40 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		6463C81B1EBA09690095B8CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = RNI18n;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		6463C81C1EBA09690095B8CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = RNI18n;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
 		CDD7BF8A1B2D5126006FDA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -488,6 +573,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6463C81D1EBA09690095B8CD /* Build configuration list for PBXNativeTarget "RNI18n-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6463C81B1EBA09690095B8CD /* Debug */,
+				6463C81C1EBA09690095B8CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CDD7BF731B2D5125006FDA75 /* Build configuration list for PBXProject "RNI18n" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
