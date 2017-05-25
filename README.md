@@ -1,48 +1,58 @@
-<img src="https://cdn0.iconfinder.com/data/icons/material-design-ii-glyph/614/3010_-_Translate-512.png" width="110" align="left" />
+<img src="https://cdn0.iconfinder.com/data/icons/material-design-ii-glyph/614/3010_-_Translate-512.png" width="100" align="left" />
 
 # react-native-i18n
+
 Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses the device's locale as default.
 <br/>
 <br/>
 
 ## Installation
-If you're on react-native >= 0.40: `$ npm install react-native-i18n --save`  
-If you're on react-native < 0.40: `$ npm install react-native-i18n@0.1.1 --save`
+
+**Using npm**
+
+`$ npm install react-native-i18n --save`
+
+**Using yarn**
+
+`$ yarn add react-native-i18n`
 
 ## Automatic setup
-After installing the npm package you need to link the native modules.  
-If you're using React-Native < 0.29 install [rnpm](https://github.com/rnpm/rnpm) with the command `npm install -g rnpm` and then link the library with the command `rnpm link`.   
+
+After installing the npm package you need to link the native modules.
+
+If you're using React-Native < 0.29, install [rnpm](https://github.com/rnpm/rnpm) with the command `npm install -g rnpm` and then link the library with the command `rnpm link`.
 If you're using React-Native >= 0.29 just link the library with the command `react-native link`.
-You can do so using [rnpm](https://github.com/rnpm/rnpm).  
 
 If you're having any issue you can also try to install the library manually as follows.
 
-**[WARNING]** There is currently [an issue](https://github.com/AlexanderZaytsev/react-native-i18n/issues/43) with the react-native link / rnpm install method. Prefers the manual install until it is solved.
-
 ## Manual setup
+
 ### iOS
+
 Add `RNI18n.xcodeproj` to **Libraries** and add `libRNI18n.a` to **Link Binary With Libraries** under **Build Phases**.  
 [More info and screenshots about how to do this is available in the React Native documentation](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content).
 
-You also need to add the **localizations** you intend to support to the iOS project. To do that open
-your Xcode project:
+You also need to add the **localizations** you intend to support to the iOS project. To do that open your Xcode project:
 
 ```
 $ open <your-project>.xcodeproj
 ```
 
-and add the localizations you will support as shown here:
+And add the localizations you will support as shown here:
 
 ![adding locales](docs/adding-locales.png)
 
 ### Android
+
 Add `react-native-i18n` to your `./android/settings.gradle` file as follows:
+
 ```
 include ':app', ':react-native-i18n'
 project(':react-native-i18n').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-i18n/android')
 ```
 
 Include it as dependency in `./android/app/build.gradle` file:
+
 ```
 dependencies {
     ...
@@ -51,8 +61,9 @@ dependencies {
 ```
 
 Finally, you need to add the package to your MainApplication (`./android/app/src/main/java/your/bundle/MainApplication.java`):
+
 ```java
-import com.i18n.reactnativei18n.ReactNativeI18n;  // <-- Add to ReactNativeI18n to the imports
+import com.AlexanderZaytsev.RNI18n.RNI18nPackage; // <-- Add to ReactNativeI18n to the imports
 
 ...
 
@@ -61,7 +72,7 @@ protected List<ReactPackage> getPackages() {
     return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
         ...
-        new ReactNativeI18n(), // <-- Add it to the packages list
+        new RNI18nPackage(), // <-- Add it to the packages list
         ...
     );
 }
@@ -71,6 +82,8 @@ protected List<ReactPackage> getPackages() {
 ```
 
 After that, you will need to recompile your project with `react-native run-android`.
+
+**Note: You'll need Android build tools 25.0.2**
 
 ## Usage
 ```javascript
