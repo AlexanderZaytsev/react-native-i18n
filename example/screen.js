@@ -1,9 +1,7 @@
 // @ flow
 
 import React, { Component } from 'react';
-// import { languages, getLanguages } from 'react-native-i18n';
-import { NativeModules } from 'react-native';
-const { getLanguages, languages } = NativeModules.RNI18n;
+import I18n, { getLanguages } from 'react-native-i18n';
 
 import {
   Platform,
@@ -12,6 +10,20 @@ import {
   ScrollView,
   View,
 } from 'react-native';
+
+// Enable fallbacks if you want `en-US`
+// and `en-GB` to fallback to `en`
+I18n.fallbacks = true;
+
+// Available languages
+I18n.translations = {
+  'en': require('./translations/en'),
+  'fr': require('./translations/fr'),
+  'fr-CA': require('./translations/fr-CA'),
+  'es': require('./translations/es'),
+};
+
+console.log(I18n.locales)
 
 export default class extends Component {
   state = { languages: [] }
@@ -25,18 +37,18 @@ export default class extends Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        <Text style={styles.title}>Internal constants</Text>
-
-        <View style={styles.line}>
-          <Text style={styles.label}>languages: </Text>
-          <Text>{JSON.stringify(languages)}</Text>
-        </View>
-
-        <Text style={styles.title}>Internal methods</Text>
+        <Text style={styles.title}>Additional methods</Text>
 
         <View style={styles.line}>
           <Text style={styles.label}>getLanguages (Promise): </Text>
           <Text>{JSON.stringify(this.state.languages)}</Text>
+        </View>
+
+        <Text style={styles.title}>Demos</Text>
+
+        <View style={styles.line}>
+          <Text style={styles.label}>I18n.t('hello world'): </Text>
+          <Text>{I18n.t('hello world')}</Text>
         </View>
       </ScrollView>
     );
