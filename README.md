@@ -2,7 +2,7 @@
 
 # react-native-i18n
 
-Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses the device's locale as default.
+Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses the user preferred locale as default.
 <br/>
 <br/>
 
@@ -32,7 +32,7 @@ If you're having any issue you can also try to install the library manually as f
 Add `RNI18n.xcodeproj` to **Libraries** and add `libRNI18n.a` to **Link Binary With Libraries** under **Build Phases**.  
 [More info and screenshots about how to do this is available in the React Native documentation](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content).
 
-You also need to add the **localizations** you intend to support to the iOS project. To do that open your Xcode project:
+You also need to add the **localizations** you intend to support to your iOS project. To do that open your Xcode project:
 
 ```
 $ open <your-project>.xcodeproj
@@ -83,7 +83,7 @@ protected List<ReactPackage> getPackages() {
 
 After that, you will need to recompile your project with `react-native run-android`.
 
-**Note: You'll need Android build tools 25.0.2**
+**Note: You'll need to install Android build tools 25.0.2**
 
 ## Usage
 ```javascript
@@ -113,18 +113,22 @@ I18n.translations = {
 This will render `Hi!` for devices with the English locale, and `Bonjour!` for devices with the French locale.
 
 ## Usage with multiple location files
+
 ```javascript
 // app/i18n/locales/en.js
+
 export default {  
   greeting: 'Hi!'
 };
 
 // app/i18n/locales/fr.js
+
 export default {  
   greeting: 'Bonjour!'
 };
 
 // app/i18n/i18n.js
+
 import I18n from 'react-native-i18n';
 import en from './locales/en';
 import fr from './locales/fr';  
@@ -138,7 +142,8 @@ I18n.translations = {
 
 export default I18n; 
 
-// usage in component 
+// usage in component
+
 import I18n from 'app/i18n/i18n';
 
 class Demo extends React.Component {
@@ -155,7 +160,8 @@ When fallbacks are enabled (which is generally recommended), `i18n.js` will try 
 - en-US
 - en
 
-**Note**: iOS locales use underscored (`en_US`) but `i18n.js` locales are dasherized (`en-US`). This conversion is done automatically for you.
+**Note**: iOS 8 locales use underscored (`en_US`) but `i18n.js` locales are dasherized (`en-US`). This conversion is done automatically for you.
+
 ```js
 I18n.fallbacks = true
 
@@ -168,20 +174,28 @@ I18n.translations = {
   }
 }
 ```
+
 For a device with a `en_GB` locale this will return `Hi from the UK!'`, for a device with a `en_US` locale it will return `Hi!`.
 
 ### Device's locale
-You can get the device's locale with the `RNI18n` native module:
+
+You can get the user preferred locales with the `RNI18n` native module:
+
 ```js
-import ReactNativeI18n from 'react-native-i18n'
-const deviceLocale = ReactNativeI18n.locale
+import { getLanguages } from 'react-native-i18n'
+
+getLanguages().then(languages => {
+  console.log(languages)
+})
 ```
 
-Returns `en-US`.
+Returns `['en-US', 'en']`.
 
 
 ### I18n.js documentation
+
 For more info about I18n.js methods (`localize`, `pluralize`, etc) and settings see [its documentation](https://github.com/fnando/i18n-js#setting-up).
 
 ## Licence
+
 MIT
