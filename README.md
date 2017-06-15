@@ -40,7 +40,7 @@ $ open <your-project>.xcodeproj
 
 And add the localizations you will support as shown here:
 
-![adding locales](docs/adding-locales.png)
+![adding locales](https://github.com/AlexanderZaytsev/react-native-i18n/blob/master/docs/adding-locales.png?raw=true)
 
 ### Android
 
