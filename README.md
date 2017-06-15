@@ -177,19 +177,17 @@ I18n.translations = {
 
 For a device with a `en_GB` locale this will return `Hi from the UK!'`, for a device with a `en_US` locale it will return `Hi!`.
 
-### Device's locale
+### Device's locales
 
-You can get the user preferred locales with the `RNI18n` native module:
+You can get the user preferred locales with the `getLanguages` method:
 
 ```js
 import { getLanguages } from 'react-native-i18n'
 
 getLanguages().then(languages => {
-  console.log(languages)
+  console.log(languages) // ['en-US', 'en']
 })
 ```
-
-Returns `['en-US', 'en']`.
 
 
 ### I18n.js documentation
