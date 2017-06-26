@@ -88,7 +88,7 @@ After that, you will need to recompile your project with `react-native run-andro
 
 **Note: You'll need to install Android build tools 25.0.2**
 
-![https://github.com/AlexanderZaytsev/react-native-i18n/blob/master/docs/android-install.png?raw=true]()
+![android install](https://github.com/AlexanderZaytsev/react-native-i18n/blob/master/docs/android-install.png?raw=true)
 
 ## Usage
 ```javascript
