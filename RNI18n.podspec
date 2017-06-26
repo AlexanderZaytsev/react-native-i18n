@@ -4,7 +4,7 @@ version = JSON.parse(File.read('package.json'))["version"]
 Pod::Spec.new do |s|
   s.name         = "RNI18n"
   s.version      = version
-  s.description  = "https://github.com/AlexanderZaytsev/react-native-i18n"
+  s.description  = "Provide I18n to your React Native application"
   s.homepage     = "https://github.com/AlexanderZaytsev/react-native-i18n"
   s.summary      = "React Native + i18n.js"
   s.license      = "MIT"
