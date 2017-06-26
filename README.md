@@ -8,13 +8,16 @@ Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses 
 
 ## Installation
 
+**Using yarn ()**
+
+`$ yarn add react-native-i18n`
+
 **Using npm**
 
 `$ npm install react-native-i18n --save`
 
-**Using yarn**
-
-`$ yarn add react-native-i18n`
+NB: npm 5 currently has an issue resolving git sub-dependencies.
+Check [this issue](https://github.com/AlexanderZaytsev/react-native-i18n/issues/101) for more informations.
 
 ## Automatic setup
 
@@ -84,6 +87,8 @@ protected List<ReactPackage> getPackages() {
 After that, you will need to recompile your project with `react-native run-android`.
 
 **Note: You'll need to install Android build tools 25.0.2**
+
+![https://github.com/AlexanderZaytsev/react-native-i18n/blob/master/docs/android-install.png?raw=true]()
 
 ## Usage
 ```javascript
