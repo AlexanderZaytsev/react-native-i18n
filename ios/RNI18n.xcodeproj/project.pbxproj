@@ -34,7 +34,7 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNI18n.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNI18n.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6476C4051EEAA69700B10F51 /* libRNI18n.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNI18n.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6476C4051EEAA69700B10F51 /* libRNI18n-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libRNI18n-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* RNI18n.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNI18n.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNI18n.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNI18n.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,7 +71,7 @@
 				B3E7B5881CC2AC0600A0062D /* RNI18n.h */,
 				B3E7B5891CC2AC0600A0062D /* RNI18n.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
-				6476C4051EEAA69700B10F51 /* libRNI18n.a */,
+				6476C4051EEAA69700B10F51 /* libRNI18n-tvOS.a */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,7 +109,7 @@
 			);
 			name = "RNI18n-tvOS";
 			productName = "RNI18n-tvOS";
-			productReference = 6476C4051EEAA69700B10F51 /* libRNI18n.a */;
+			productReference = 6476C4051EEAA69700B10F51 /* libRNI18n-tvOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -286,7 +286,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNI18n;
+				PRODUCT_NAME = "RNI18n-tvOS";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TVOS_DEPLOYMENT_TARGET = 10.2;
@@ -305,7 +305,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNI18n;
+				PRODUCT_NAME = "RNI18n-tvOS";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TVOS_DEPLOYMENT_TARGET = 10.2;
@@ -340,6 +340,7 @@
 				6476C40C1EEAA69700B10F51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
