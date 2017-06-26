@@ -30,15 +30,16 @@ If you're having any issue you can also try to install the library manually as f
 
 ## Automatic setup with Cocoapods
 
-After installing the npm package, add the following to your Podfile 
+After installing the npm package, add the following line to your Podfile
+
+```ruby
+pod 'RNI18n', :path => 'node_modules/react-native-i18n'
+```
+
+and run
 
 ```
-  pod 'RNI18n', :path => 'node_modules/react-native-i18n'
-```
-
-and run 
-```
-  pod install
+pod install
 ```
 
 ## Manual setup
@@ -62,16 +63,16 @@ And add the localizations you will support as shown here:
 
 Add `react-native-i18n` to your `./android/settings.gradle` file as follows:
 
-```
+```gradle
 include ':app', ':react-native-i18n'
 project(':react-native-i18n').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-i18n/android')
 ```
 
 Include it as dependency in `./android/app/build.gradle` file:
 
-```
+```gradle
 dependencies {
-    ...
+    // ...
     compile project(':react-native-i18n')
 }
 ```
@@ -81,19 +82,18 @@ Finally, you need to add the package to your MainApplication (`./android/app/src
 ```java
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage; // <-- Add to ReactNativeI18n to the imports
 
-...
+// ...
 
 @Override
 protected List<ReactPackage> getPackages() {
     return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
-        ...
+        // ...
         new RNI18nPackage(), // <-- Add it to the packages list
-        ...
     );
 }
 
-...
+// ...
 
 ```
 
@@ -104,6 +104,7 @@ After that, you will need to recompile your project with `react-native run-andro
 ![android install](https://github.com/AlexanderZaytsev/react-native-i18n/blob/master/docs/android-install.png?raw=true)
 
 ## Usage
+
 ```javascript
 import I18n from 'react-native-i18n'
 
@@ -180,7 +181,7 @@ When fallbacks are enabled (which is generally recommended), `i18n.js` will try 
 
 **Note**: iOS 8 locales use underscored (`en_US`) but `i18n.js` locales are dasherized (`en-US`). This conversion is done automatically for you.
 
-```js
+```javascript
 I18n.fallbacks = true
 
 I18n.translations = {
@@ -199,7 +200,7 @@ For a device with a `en_GB` locale this will return `Hi from the UK!'`, for a de
 
 You can get the user preferred locales with the `getLanguages` method:
 
-```js
+```javascript
 import { getLanguages } from 'react-native-i18n'
 
 getLanguages().then(languages => {
