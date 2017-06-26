@@ -5,6 +5,7 @@ Pod::Spec.new do |s|
   s.name         = "RNI18n"
   s.version      = version
   s.description  = "https://github.com/AlexanderZaytsev/react-native-i18n"
+  s.homepage     = "https://github.com/AlexanderZaytsev/react-native-i18n"
   s.summary      = "React Native + i18n.js"
   s.license      = "MIT"
   s.author       = { "Alexander Zaytsev" => "alexander@say26.com" }
