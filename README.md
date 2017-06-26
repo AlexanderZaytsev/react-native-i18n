@@ -16,7 +16,7 @@ Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses 
 
 `$ npm install react-native-i18n --save`
 
-NB: npm 5 currently has an issue resolving git sub-dependencies.
+NB: npm currently has an issue resolving git sub-dependencies.
 Check [this issue](https://github.com/AlexanderZaytsev/react-native-i18n/issues/101) for more informations.
 
 ## Automatic setup
