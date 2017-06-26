@@ -28,6 +28,19 @@ If you're using React-Native >= 0.29 just link the library with the command `rea
 
 If you're having any issue you can also try to install the library manually as follows.
 
+## Automatic setup with Cocoapods
+
+After installing the npm package, add the following to your Podfile 
+
+```
+  pod 'RNI18n', :path => 'node_modules/react-native-i18n'
+```
+
+and run 
+```
+  pod install
+```
+
 ## Manual setup
 
 ### iOS
