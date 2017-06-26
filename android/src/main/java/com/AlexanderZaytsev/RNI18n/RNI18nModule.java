@@ -44,14 +44,16 @@ public class RNI18nModule extends ReactContextBaseJavaModule {
   private WritableArray getLocaleList() {
     WritableArray array = Arguments.createArray();
 
-    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-      LocaleList locales = getReactApplicationContext().getResources().getConfiguration().getLocales();
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+      LocaleList locales = getReactApplicationContext()
+          .getResources().getConfiguration().getLocales();
 
       for (int i = 0; i < locales.size(); i++) {
         array.pushString(this.toLanguageTag(locales.get(i)));
       }
     } else {
-      array.pushString(this.toLanguageTag(getReactApplicationContext().getResources().getConfiguration().locale));
+      array.pushString(this.toLanguageTag(getReactApplicationContext()
+          .getResources().getConfiguration().locale));
     }
 
     return array;
@@ -61,7 +63,6 @@ public class RNI18nModule extends ReactContextBaseJavaModule {
   public Map<String, Object> getConstants() {
     HashMap<String, Object> constants = new HashMap<String,Object>();
     constants.put("languages", this.getLocaleList());
-
     return constants;
   }
 
