@@ -33,7 +33,7 @@ If you're having any issue you can also try to install the library manually as f
 After installing the npm package, add the following line to your Podfile
 
 ```ruby
-pod 'RNI18n', :path => 'node_modules/react-native-i18n'
+pod 'RNI18n', :path => '../node_modules/react-native-i18n'
 ```
 
 and run
