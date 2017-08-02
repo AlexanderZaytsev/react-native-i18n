@@ -17,7 +17,7 @@ public class RNI18nPackage implements ReactPackage {
     return Arrays.<NativeModule>asList(new RNI18nModule(reactContext));
   }
 
-  @Override
+  // Deprecated in React Native 0.47
   public List<Class<? extends JavaScriptModule>> createJSModules() {
     return Collections.emptyList();
   }
