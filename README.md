@@ -174,6 +174,12 @@ class Demo extends React.Component {
 }
 ```
 
+### Available Locales
+* [Supported By All Platforms (iOS, Android, Windows)](/docs/locales-all.csv)
+* [iOS](/docs/locales-ios.csv) *([Source](https://gist.github.com/jasef/337431c43c3addb2cbd5eb215b376179))*
+* [Android](/docs/locales-android.csv) *(Source: Android 4.1)*
+* [Windows](/docs/locales-windows.csv) *([Source](https://docs.microsoft.com/en-us/windows/uwp/publish/supported-languages))*
+
 ### Fallbacks
 When fallbacks are enabled (which is generally recommended), `i18n.js` will try to look up translations in the following order (for a device with `en_US` locale):
 - en-US
