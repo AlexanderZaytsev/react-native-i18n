@@ -8,9 +8,11 @@
   "dependencies": {
     "react": "16.0.0-alpha.12",
     "react-native": "0.45.1",
-    "react-native-i18n": "file:../"
+    "react-native-i18n": "file:../",
+    "react-native-windows": "0.45.0-rc.1"
   },
   "devDependencies": {
-    "babel-preset-react-native": "2.0.0"
+    "babel-preset-react-native": "2.0.0",
+    "rnpm-plugin-windows": "^0.2.7"
   }
 }
