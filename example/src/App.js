@@ -1,15 +1,8 @@
 // @ flow
 
 import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, ScrollView, View } from 'react-native';
 import I18n, { getLanguages } from 'react-native-i18n';
-
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  ScrollView,
-  View,
-} from 'react-native';
 
 // Enable fallbacks if you want `en-US`
 // and `en-GB` to fallback to `en`
@@ -23,15 +16,13 @@ I18n.translations = {
   'es': require('./translations/es'),
 };
 
-console.log(I18n.locales)
-
 export default class extends Component {
-  state = { languages: [] }
+  state = { languages: [] };
 
   componentWillMount() {
     getLanguages().then(languages => {
-      this.setState({ languages })
-    })
+      this.setState({ languages });
+    });
   }
 
   render() {
