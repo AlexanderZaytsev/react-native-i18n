@@ -1,10 +1,8 @@
 // @flow
 
-import { NativeModules } from 'react-native';
-import I18n from 'i18n-js';
-const { RNI18n } = NativeModules;
+const RNI18n = require('react-native').NativeModules.RNI18n;
+const I18nJs = require('i18n-js');
 
-I18n.locale = RNI18n.languages[0];
-
+I18nJs.locale = RNI18n.languages[0];
 export const getLanguages = RNI18n.getLanguages;
-export default I18n;
+export default I18nJs;
