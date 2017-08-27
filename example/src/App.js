@@ -27,18 +27,18 @@ export default class extends Component {
 
   render() {
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView style={styles.container} bounces={false}>
         <Text style={styles.title}>Additional methods</Text>
 
-        <View style={styles.line}>
-          <Text style={styles.label}>getLanguages (Promise): </Text>
+        <View style={styles.block}>
+          <Text style={styles.label}>getLanguages (Promise)</Text>
           <Text>{JSON.stringify(this.state.languages)}</Text>
         </View>
 
         <Text style={styles.title}>Demos</Text>
 
-        <View style={styles.line}>
-          <Text style={styles.label}>I18n.t('hello world'): </Text>
+        <View style={styles.block}>
+          <Text style={styles.label}>I18n.t('hello world')</Text>
           <Text>{I18n.t('hello world')}</Text>
         </View>
       </ScrollView>
@@ -51,15 +51,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F5FCFF',
     padding: 24,
-    paddingTop: Platform.OS === 'ios' ? 44 : 24,
+    ...Platform.select({
+      ios: { paddingTop: 44 },
+      default: { paddingTop: 24 },
+    }),
   },
   title: {
     fontSize: 20,
     fontWeight: '700',
     marginBottom: 8,
   },
-  line: {
-    flexDirection: 'row',
+  block: {
     marginBottom: 16,
   },
   label: {
