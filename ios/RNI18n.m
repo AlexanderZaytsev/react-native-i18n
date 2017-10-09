@@ -5,6 +5,10 @@
 
 RCT_EXPORT_MODULE();
 
++ (BOOL)requiresMainQueueSetup
+{
+    return YES;
+}
 - (NSMutableArray *)toLanguageTags:(NSArray *)languages {
   NSMutableArray *languageTags = [NSMutableArray array];
 
