@@ -14,4 +14,6 @@ Pod::Spec.new do |s|
   s.source       = { git: "https://github.com/AlexanderZaytsev/react-native-i18n.git", tag: s.version.to_s }
   s.source_files = "ios/**/*.{h,m}"
   s.requires_arc = true
+
+  s.dependency "React"
 end
