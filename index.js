@@ -9,5 +9,5 @@ if (typeof RNI18n !== 'undefined') {
   console.warn('react-native-i18n module is not correctly linked');
 }
 
-export const getLanguages = RNI18n.getLanguages;
+export const getLanguages = () => RNI18n.getLanguages();
 export default I18nJs;
