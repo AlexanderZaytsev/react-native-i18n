@@ -1,5 +1,7 @@
 // @flow
 
+'use strict';
+
 const RNI18n = require('react-native').NativeModules.RNI18n;
 const I18nJs = require('i18n-js');
 
@@ -9,5 +11,5 @@ if (typeof RNI18n !== 'undefined') {
   console.warn('react-native-i18n module is not correctly linked');
 }
 
-export const getLanguages = () => RNI18n.getLanguages();
-export default I18nJs;
+I18nJs.getLanguages = () => RNI18n.getLanguages();
+module.exports = I18nJs;
