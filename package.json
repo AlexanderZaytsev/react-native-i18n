@@ -11,6 +11,6 @@
   },
   "keywords": ["react-native", "react-component", "ios", "i18n"],
   "dependencies": {
-    "i18n-js": "^3.0.2"
+    "i18n-js": "^3.0.3"
   }
 }
