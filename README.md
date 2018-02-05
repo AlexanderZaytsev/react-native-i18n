@@ -91,7 +91,6 @@ protected List<ReactPackage> getPackages() {
 }
 
 // ...
-
 ```
 
 After that, you will need to recompile your project with `react-native run-android`.
@@ -103,27 +102,26 @@ After that, you will need to recompile your project with `react-native run-andro
 ## Usage
 
 ```javascript
-import I18n from 'react-native-i18n'
+import I18n from 'react-native-i18n';
+// OR const I18n = require('react-native-i18n').default
 
 class Demo extends React.Component {
-  render () {
-    return (
-      <Text>{I18n.t('greeting')}</Text>
-    )
+  render() {
+    return <Text>{I18n.t('greeting')}</Text>;
   }
 }
 
 // Enable fallbacks if you want `en-US` and `en-GB` to fallback to `en`
-I18n.fallbacks = true
+I18n.fallbacks = true;
 
 I18n.translations = {
   en: {
-    greeting: 'Hi!'
+    greeting: 'Hi!',
   },
   fr: {
-    greeting: 'Bonjour!'
-  }
-}
+    greeting: 'Bonjour!',
+  },
+};
 ```
 
 This will render `Hi!` for devices with the English locale, and `Bonjour!` for devices with the French locale.
@@ -147,7 +145,7 @@ export default {
 
 import I18n from 'react-native-i18n';
 import en from './locales/en';
-import fr from './locales/fr';  
+import fr from './locales/fr';
 
 I18n.fallbacks = true;
 
@@ -156,7 +154,7 @@ I18n.translations = {
   fr
 };
 
-export default I18n; 
+export default I18n;
 
 // usage in component
 
@@ -172,23 +170,25 @@ class Demo extends React.Component {
 ```
 
 ### Fallbacks
+
 When fallbacks are enabled (which is generally recommended), `i18n.js` will try to look up translations in the following order (for a device with `en_US` locale):
-- en-US
-- en
+
+* en-US
+* en
 
 **Note**: iOS 8 locales use underscored (`en_US`) but `i18n.js` locales are dasherized (`en-US`). This conversion is done automatically for you.
 
 ```javascript
-I18n.fallbacks = true
+I18n.fallbacks = true;
 
 I18n.translations = {
-  'en': {
-    greeting: 'Hi!'
+  en: {
+    greeting: 'Hi!',
   },
   'en-GB': {
-    greeting: 'Hi from the UK!'
-  }
-}
+    greeting: 'Hi from the UK!',
+  },
+};
 ```
 
 For a device with a `en_GB` locale this will return `Hi from the UK!'`, for a device with a `en_US` locale it will return `Hi!`.
@@ -198,13 +198,12 @@ For a device with a `en_GB` locale this will return `Hi from the UK!'`, for a de
 You can get the user preferred locales with the `getLanguages` method:
 
 ```javascript
-import { getLanguages } from 'react-native-i18n'
+import { getLanguages } from 'react-native-i18n';
 
 getLanguages().then(languages => {
-  console.log(languages) // ['en-US', 'en']
-})
+  console.log(languages); // ['en-US', 'en']
+});
 ```
-
 
 ### I18n.js documentation
 
