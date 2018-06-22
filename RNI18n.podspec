@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.author       = { "Alexander Zaytsev" => "alexander@say26.com" }
   s.ios.deployment_target = "7.0"
   s.tvos.deployment_target = "9.0"
-  s.source       = { git: "https://github.com/AlexanderZaytsev/react-native-i18n.git", tag: s.version.to_s }
+  s.source       = { git: "https://github.com/AlexanderZaytsev/react-native-i18n.git", tag: "v" + s.version.to_s }
   s.source_files = "ios/**/*.{h,m}"
   s.requires_arc = true
 
