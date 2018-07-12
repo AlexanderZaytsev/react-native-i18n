@@ -1,12 +1,14 @@
 apply plugin: 'com.android.library'
 
+def ext = rootProject.ext
+
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion ext.has('compileSdkVersion') ? ext.compileSdkVersion : 25
+    buildToolsVersion ext.has('buildToolsVersion') ? ext.buildToolsVersion : "25.0.2"
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 22
+        minSdkVersion ext.has('minSdkVersion') ? ext.minSdkVersion : 16
+        targetSdkVersion ext.has('targetSdkVersion') ? ext.targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         ndk {
