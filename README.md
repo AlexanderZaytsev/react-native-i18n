@@ -96,9 +96,7 @@ protected List<ReactPackage> getPackages() {
 
 After that, you will need to recompile your project with `react-native run-android`.
 
-**Note: You'll need to install Android build tools 25.0.2**
-
-![android install](https://github.com/AlexanderZaytsev/react-native-i18n/blob/master/docs/android-install.png?raw=true)
+**⚠️ Important: You'll need to install Android build tools 27.0.3**
 
 ## Usage
 
@@ -174,8 +172,8 @@ class Demo extends React.Component {
 
 When fallbacks are enabled (which is generally recommended), `i18n.js` will try to look up translations in the following order (for a device with `en_US` locale):
 
-* en-US
-* en
+- en-US
+- en
 
 **Note**: iOS 8 locales use underscored (`en_US`) but `i18n.js` locales are dasherized (`en-US`). This conversion is done automatically for you.
 

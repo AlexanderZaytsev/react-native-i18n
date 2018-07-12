@@ -1,6 +1,6 @@
 {
   "name": "react-native-i18n",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "Provide I18n to your React Native application",
   "license": "MIT",
   "author": "Alexander Zaytsev",
@@ -9,8 +9,13 @@
     "type": "git",
     "url": "github.com/AlexanderZaytsev/react-native-i18n.git"
   },
-  "keywords": ["react-native", "react-component", "ios", "i18n"],
+  "keywords": [
+    "react-native",
+    "react-component",
+    "ios",
+    "i18n"
+  ],
   "dependencies": {
-    "i18n-js": "^3.0.3"
+    "i18n-js": "^3.0.11"
   }
 }
