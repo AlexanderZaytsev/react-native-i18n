@@ -26,9 +26,10 @@ public class RNI18nModule extends ReactContextBaseJavaModule {
   }
 
   private String toLanguageTag(Locale locale) {
-    String langTag;
+    String languageTag;
+
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-      langTag = locale.toLanguageTag();
+      languageTag = locale.toLanguageTag();
     } else {
       StringBuilder builder = new StringBuilder();
       builder.append(locale.getLanguage());
@@ -38,12 +39,17 @@ public class RNI18nModule extends ReactContextBaseJavaModule {
         builder.append(locale.getCountry());
       }
 
-      langTag = builder.toString();
+      languageTag = builder.toString();
     }
-    if (langTag.matches("^(iw|in|ji).*")){
-      return langTag.replace("iw","he").replace("in","id").replace("ji","yi");
+
+    if (languageTag.matches("^(iw|in|ji).*")){
+      return languageTag
+        .replace("iw","he")
+        .replace("in","id")
+        .replace("ji","yi");
     }
-    return langTag;
+
+    return languageTag;
   }
 
   private WritableArray getLocaleList() {

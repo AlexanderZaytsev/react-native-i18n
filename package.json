@@ -1,6 +1,6 @@
 {
   "name": "react-native-i18n",
-  "version": "2.0.14",
+  "version": "2.0.15",
   "description": "Provide I18n to your React Native application",
   "license": "MIT",
   "author": "Alexander Zaytsev",
@@ -16,6 +16,6 @@
     "i18n"
   ],
   "dependencies": {
-    "i18n-js": "^3.0.11"
+    "i18n-js": "3.0.11"
   }
 }

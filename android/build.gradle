@@ -2,31 +2,25 @@ apply plugin: 'com.android.library'
 
 def _ext = rootProject.ext
 
-def _reactNativeVersion = _ext.has('reactNative') ? _ext.reactNative : '+'
-def _compileSdkVersion = _ext.has('compileSdkVersion') ? _ext.compileSdkVersion : 27
-def _buildToolsVersion = _ext.has('buildToolsVersion') ? _ext.buildToolsVersion : '27.0.3'
+def _compileSdkVersion = _ext.has('compileSdkVersion') ? _ext.compileSdkVersion : 26
+def _buildToolsVersion = _ext.has('buildToolsVersion') ? _ext.buildToolsVersion : '26.0.3'
 def _minSdkVersion = _ext.has('minSdkVersion') ? _ext.minSdkVersion : 16
-def _targetSdkVersion = _ext.has('targetSdkVersion') ? _ext.targetSdkVersion : 27
+def _targetSdkVersion = _ext.has('targetSdkVersion') ? _ext.targetSdkVersion : 26
 
 android {
-    compileSdkVersion _compileSdkVersion
-    buildToolsVersion _buildToolsVersion
+  compileSdkVersion _compileSdkVersion
+  buildToolsVersion _buildToolsVersion
 
-    defaultConfig {
-        minSdkVersion _minSdkVersion
-        targetSdkVersion _targetSdkVersion
-        versionCode 1
-        versionName "1.0"
-        ndk {
-            abiFilters "armeabi-v7a", "x86"
-        }
-    }
-    lintOptions {
-        abortOnError false
-    }
+  defaultConfig {
+    minSdkVersion _minSdkVersion
+    targetSdkVersion _targetSdkVersion
+  }
+
+  lintOptions {
+    abortOnError false
+  }
 }
 
 dependencies {
-    //noinspection GradleDynamicVersion
-    compile "com.facebook.react:react-native:${_reactNativeVersion}"
+  compile "com.facebook.react:react-native:+" // From node_modules
 }
