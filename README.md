@@ -20,7 +20,7 @@ Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses 
 
 After installing the npm package you need to link the native modules.
 
-If you're using React-Native >= 0.29 just link the library with the command `react-native link`.
+If you're using React-Native >= 0.29 just link the library with the command `react-native link react-native-i18n`.
 
 If you're using React-Native < 0.29, install [rnpm](https://github.com/rnpm/rnpm) with the command `npm install -g rnpm` and then link the library with the command `rnpm link`.
 
