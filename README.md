@@ -1,6 +1,6 @@
 ## ⚠️ Deprecated
 
-_This library is deprecated in favor of [react-native-languages](https://github.com/react-community/react-native-languages). You can use react-native-languages with [I18n-js](https://github.com/fnando/i18n-js) (but also with [react-intl](https://github.com/yahoo/react-intl), [react-i18next](https://github.com/i18next/react-i18next), etc. The choice is yours!) and the change required take only 5 minutes: a full [example](https://github.com/react-community/react-native-languages/tree/master/example) is provided._
+_This library is deprecated in favor of [react-native-languages](https://github.com/react-community/react-native-languages). You can use react-native-languages with [I18n-js](https://github.com/fnando/i18n-js) (but also with [react-intl](https://github.com/yahoo/react-intl), [react-i18next](https://github.com/i18next/react-i18next), etc. The choice is yours!) and the required change will take only a few minutes: a full [example](https://github.com/react-community/react-native-languages/tree/master/example) is provided._
 
 <img src="https://cdn0.iconfinder.com/data/icons/material-design-ii-glyph/614/3010_-_Translate-512.png" width="100" align="left" />
 
