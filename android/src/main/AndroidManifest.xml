@@ -1,5 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.AlexanderZaytsev.RNI18n">
-    <uses-sdk android:minSdkVersion="16" />
-</manifest>
+    package="com.AlexanderZaytsev.RNI18n"></manifest>
