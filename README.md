@@ -1,3 +1,7 @@
+# ⚠️ This package is deprecated
+
+_This library is deprecated in favor of [react-native-localize](https://github.com/react-native-community/react-native-localize). You can use react-native-localize with [I18n-js](https://github.com/fnando/i18n-js) (but also with [react-intl](https://github.com/yahoo/react-intl), [react-i18next](https://github.com/i18next/react-i18next), etc. The choice is yours!)_
+
 <img src="https://cdn0.iconfinder.com/data/icons/material-design-ii-glyph/614/3010_-_Translate-512.png" width="100" align="left" />
 
 # react-native-i18n
@@ -5,10 +9,6 @@
 Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses the user preferred locale as default.
 <br/>
 <br/>
-
-## ⚠️ This package is deprecated
-
-_This library is deprecated in favor of [react-native-localize](https://github.com/react-native-community/react-native-localize). You can use react-native-localize with [I18n-js](https://github.com/fnando/i18n-js) (but also with [react-intl](https://github.com/yahoo/react-intl), [react-i18next](https://github.com/i18next/react-i18next), etc. The choice is yours!)_
 
 ## Installation
 
