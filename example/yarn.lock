@@ -1885,9 +1885,9 @@ http-signature@~1.1.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-"i18n-js@github:fnando/i18n-js#v3.0.1":
-  version "3.0.1"
-  resolved "https://codeload.github.com/fnando/i18n-js/tar.gz/a4f947fd65d80bd3e09971f21ab02e967e676742"
+i18n-js@3.0.11:
+  version "3.0.11"
+  resolved "https://registry.yarnpkg.com/i18n-js/-/i18n-js-3.0.11.tgz#f9e96bdb641c5b9d6be12759d7c422089987ef02"
 
 iconv-lite@0.4.11:
   version "0.4.11"
@@ -3235,9 +3235,9 @@ react-devtools-core@2.3.1:
     ws "^2.0.3"
 
 "react-native-i18n@file:..":
-  version "2.0.6"
+  version "2.0.15"
   dependencies:
-    i18n-js "github:fnando/i18n-js#v3.0.1"
+    i18n-js "3.0.11"
 
 react-native@0.47.2:
   version "0.47.2"
@@ -4197,8 +4197,8 @@ write-file-atomic@^1.2.0:
     slide "^1.1.5"
 
 ws@^1.1.0:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.4.tgz#57f40d036832e5f5055662a397c4de76ed66bf61"
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.5.tgz#cbd9e6e75e09fc5d2c90015f21f0c40875e0dd51"
   dependencies:
     options ">=0.0.5"
     ultron "1.0.x"
