@@ -117,6 +117,9 @@ class Demo extends React.Component {
 // Enable fallbacks if you want `en-US` and `en-GB` to fallback to `en`
 I18n.fallbacks = true;
 
+// Make `en` the fallback locale from translations missing in other languages (e.g. `fr`)
+I18n.defaultLocale = 'en';
+
 I18n.translations = {
   en: {
     greeting: 'Hi!',
