@@ -208,6 +208,90 @@ getLanguages().then(languages => {
 });
 ```
 
+## Testing your i18n translations
+
+Your I18n translations can easily be tested with Jest or any other testing framework.
+
+
+Define a helper method to iterate through your keys : 
+
+```javascript
+function iterate(obj, stack, array) {
+  for (const property in obj) {
+    if (obj.hasOwnProperty(property)) {
+      if (typeof obj[property] === 'object') {
+        iterate(obj[property], `${stack}.${property}`, array);
+      } else {
+        array.push(`${stack.slice(1)}.${property}`);
+      }
+    }
+  }
+
+  return array;
+}
+```
+
+Let's assume that you put your files in an `src` folder.
+Then you can :
+
+### Check that you have defined all your keys
+
+```javascript
+import fr from 'your/path/to/locales/fr';
+import en from 'your/path/to/locales/en';
+
+test('There are no missing keys', done => {
+  exec(`grep "I18n.t(.*\'" -ohrw './src' | grep -o "'.*"`, (_, stdout) => {
+    const allTranslationsDefined = iterate(en, '', []);
+    const allTranslationsUsed = stdout.replace(new RegExp("'", 'g'), '').split('\n');
+    allTranslationsUsed.splice(-1, 1);
+
+    for (let i = 0; i < allTranslationsUsed.length; i += 1) {
+      expect(allTranslationsDefined).toContainEqual(allTranslationsUsed[i]);
+    }
+    done();
+  });
+});
+```
+
+### Verify that your keys are the same for every language
+
+```javascript
+import fr from 'your/path/to/locales/fr';
+import en from 'your/path/to/locales/en';
+
+test('Translations keys are the same for every language', () => {
+  const translationKeysEn = iterate(en, '', []);
+  const translationKeysFr = iterate(fr, '', []);
+
+  expect(translationKeysFr).toEqual(translationKeysEn);
+});
+```
+
+### Verify that every defined translation keys are used
+
+```javascript
+test('There should not be unused keys', async () => {
+  const translationKeysEn = iterate(en, '', []);
+
+  let everyStringsAreUsed = true;
+  for (let i = 0; i < translationKeysEn.length; i += 1) {
+    await new Promise(resolve => {
+      exec(`grep -rnw './src' -e '${translationKeysEn[i]}'`, (_, stdout) => {
+        if (everyStringsAreUsed) everyStringsAreUsed = !(stdout == '');
+        if (stdout == '')
+          console.warn(`[I18n] Could not find '${translationKeysEn[i]}' in 'src' folder`);
+        resolve();
+      });
+    });
+  }
+  expect(everyStringsAreUsed).toBeTruthy();
+});
+```
+
+A full example can be found here : https://gist.github.com/Michaelvilleneuve/8808ba2775536665d95b7577c9d8d5a1
+
+
 ### I18n.js documentation
 
 For more info about I18n.js methods (`localize`, `pluralize`, etc) and settings see [its documentation](https://github.com/fnando/i18n-js#setting-up).
