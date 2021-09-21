@@ -1885,9 +1885,9 @@ http-signature@~1.1.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-"i18n-js@github:fnando/i18n-js#v3.0.1":
-  version "3.0.1"
-  resolved "https://codeload.github.com/fnando/i18n-js/tar.gz/a4f947fd65d80bd3e09971f21ab02e967e676742"
+i18n-js@3.0.11:
+  version "3.0.11"
+  resolved "https://registry.yarnpkg.com/i18n-js/-/i18n-js-3.0.11.tgz#f9e96bdb641c5b9d6be12759d7c422089987ef02"
 
 iconv-lite@0.4.11:
   version "0.4.11"
@@ -3235,9 +3235,9 @@ react-devtools-core@2.3.1:
     ws "^2.0.3"
 
 "react-native-i18n@file:..":
-  version "2.0.6"
+  version "2.0.15"
   dependencies:
-    i18n-js "github:fnando/i18n-js#v3.0.1"
+    i18n-js "3.0.11"
 
 react-native@0.47.2:
   version "0.47.2"
@@ -3942,8 +3942,8 @@ tmp@^0.0.31:
     os-tmpdir "~1.0.1"
 
 tmpl@1.0.x:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.4.tgz#23640dd7b42d00433911140820e5cf440e521dd1"
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.5.tgz#8683e0b902bb9c20c4f726e3c0b69f36518c07cc"
 
 to-fast-properties@^1.0.3:
   version "1.0.3"
