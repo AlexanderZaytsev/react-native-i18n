@@ -75,7 +75,7 @@ Include it as dependency in `./android/app/build.gradle` file:
 ```gradle
 dependencies {
     // ...
-    compile project(':react-native-i18n')
+    implementation project(':react-native-i18n')
 }
 ```
 
